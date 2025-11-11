@@ -1,0 +1,181 @@
+:root {
+  --primary: #3498db;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --dark: #2c3e50;
+  --light: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--dark);
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  color: var(--dark);
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.input-group {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+input, button {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+button.success {
+  background: var(--success);
+}
+
+button.success:hover {
+  background: #219653;
+}
+
+button.secondary {
+  background: #95a5a6;
+}
+
+button.secondary:hover {
+  background: #7f8c8d;
+}
+
+.pregunta {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.pregunta label {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: normal;
+}
+
+#resultado, #alertaTiempo {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#alertaTiempo.optimo {
+  background: #d5f5e3;
+  color: var(--success);
+  border: 2px solid var(--success);
+}
+
+#alertaTiempo.cerca {
+  background: #fef9e7;
+  color: var(--warning);
+  border: 2px solid var(--warning);
+}
+
+#alertaTiempo.perdiendo {
+  background: #fadbd8;
+  color: var(--danger);
+  border: 2px solid var(--danger);
+}
+
+.editable-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.editable-time input {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.hide {
+  display: none;
+}
