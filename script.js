@@ -1,12 +1,12 @@
 let tOptimoGlobal = 0;
-  let tiempoInicial = 0;
+let tiempoInicial = 0;
 
   function calcularFatiga() {
     const respuestas = document.querySelectorAll('input[type="radio"]:checked');
     const tiempoInput = document.getElementById('tiempoDisponible');
     
     if (respuestas.length < 5) {
-      alert("Responde todas las preguntas.");
+      alert("Por favor responda todas las pregunts.");
       return;
     }
     if (!tiempoInput.value || tiempoInput.value < 1 || tiempoInput.value > 16) {
@@ -91,7 +91,7 @@ let tOptimoGlobal = 0;
         <p>Estás <strong>muy cerca del máximo</strong> (±${margen} h).</p>
         <p>Obtendrás <strong>${rActual.toFixed(1)} puntos</strong> (solo <strong>${Math.abs(perdida).toFixed(1)} puntos</strong> menos que el óptimo).</p>
         <p>Diferencia: <strong>${diferencia.toFixed(1)} h</strong> del tiempo ideal.</p>
-        <p><strong>¡Excelente decisión!</strong> Estás en el rango ideal.</p>
+        <p><strong>¡Muy bien!</strong> Estás en el rango ideal.</p>
       `;
     } else {
       clase = 'perdiendo';
@@ -99,7 +99,7 @@ let tOptimoGlobal = 0;
       alertaHTML = `
         <p>¡Estás <strong>perdiendo ${perdida.toFixed(1)} puntos</strong>!</p>
         <p>Has estudiado <strong>${(tUser - tOptimoGlobal).toFixed(1)} h de más</strong>.</p>
-        <p><strong>¡Para ya!</strong> Descansa o repasa lo aprendido.</p>
+        <p><strong>¡Para ya!</strong> Ve a tomar un descanso.</p>
       `;
     }
 

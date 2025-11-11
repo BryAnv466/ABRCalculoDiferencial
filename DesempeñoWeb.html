@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Tiempo Óptimo de Estudio</title>
+
+  <!-- Enlaces externos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>¿Cuánto Debo Estudiar?</h1>
+    <p>Optimización con derivadas • Ingeniería de Sistemas</p>
+  </header>
+
+  <!-- Cuestionario -->
+  <div id="cuestionario" class="section">
+    <h2>Diagnóstico de Fatiga + Tiempo</h2>
+    <p><em>Responde 6 preguntas para personalizar tu plan.</em></p>
+
+    <div class="pregunta">
+      <p><strong>1. ¿Cuántas horas dormiste?</strong></p>
+      <label><input type="radio" name="q1" value="4"> Menos de 5 h</label>
+      <label><input type="radio" name="q1" value="3"> 5–6 h</label>
+      <label><input type="radio" name="q1" value="2"> 7–8 h</label>
+      <label><input type="radio" name="q1" value="1"> Más de 8 h</label>
+    </div>
+
+    <div class="pregunta">
+      <p><strong>2. ¿Cómo te sientes?</strong></p>
+      <label><input type="radio" name="q2" value="4"> Muy cansado</label>
+      <label><input type="radio" name="q2" value="3"> Cansado</label>
+      <label><input type="radio" name="q2" value="2"> Normal</label>
+      <label><input type="radio" name="q2" value="1"> Energético</label>
+    </div>
+
+    <div class="pregunta">
+      <p><strong>3. ¿Comiste bien?</strong></p>
+      <label><input type="radio" name="q3" value="3"> Solo café / nada</label>
+      <label><input type="radio" name="q3" value="2"> Algo ligero</label>
+      <label><input type="radio" name="q3" value="1"> Comida completa</label>
+    </div>
+
+    <div class="pregunta">
+      <p><strong>4. ¿Estás estresado?</strong></p>
+      <label><input type="radio" name="q4" value="3"> Mucho</label>
+      <label><input type="radio" name="q4" value="2"> Un poco</label>
+      <label><input type="radio" name="q4" value="1"> Nada</label>
+    </div>
+
+    <div class="pregunta">
+      <p><strong>5. ¿Usas técnica activa?</strong></p>
+      <label><input type="radio" name="q5" value="3"> Solo leo</label>
+      <label><input type="radio" name="q5" value="2"> A veces</label>
+      <label><input type="radio" name="q5" value="1"> Siempre</label>
+    </div>
+
+    <div class="pregunta">
+      <p><strong>6. ¿Cuántas horas tienes disponibles? (Max 16 horas)</strong></p>
+      <input type="number" id="tiempoDisponible" min="1" max="16" value="8" step="0.5" style="width:100%; padding:0.7rem; margin-top:0.5rem;">
+      <small style="color:#777;">Ej: 4, 6.5, 10</small>
+    </div>
+
+    <button onclick="calcularFatiga()" class="success">Calcular mi plan óptimo</button>
+    <div id="resultadoFatiga"></div>
+  </div>
+
+  <!-- Resultados -->
+  <div id="calculadora" class="section hide">
+    <h2>Tu Plan de Estudio</h2>
+
+    <div class="input-group">
+      <label>Productividad inicial (b)</label>
+      <input type="number" id="b" value="5" step="0.5" min="1" max="20">
+    </div>
+
+    <div class="input-group">
+      <label>Tasa de fatiga (a)</label>
+      <input type="number" id="a" value="-0.5" step="0.1" min="-2" max="-0.1">
+    </div>
+
+    <button onclick="calcular()">Actualizar</button>
+    <button onclick="volverEncuesta()" class="secondary">Volver a la encuesta</button>
+
+    <div id="resultado"></div>
+
+    <div class="editable-time">
+      <span>Tiempo de estudio:</span>
+      <input type="number" id="tiempoEditable" min="0" max="16" step="0.5" oninput="actualizarAlerta()">
+      <span>horas</span>
+    </div>
+
+    <div id="alertaTiempo"></div>
+  </div>
+
+  <footer>
+    Desarrollado por <strong>Bryan Angel Vela Vertiz</strong> • Ingeniería de Sistemas • 3er ciclo • Universidad Continental<br>
+    Perú • 2025
+  </footer>
+</div>
+
+<!-- Script externo -->
+<script src="script.js"></script>
+</body>
+</html>
